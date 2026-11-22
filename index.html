@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thomas Bourgeois – Portfolio</title>
+<meta name="description" content="Portfolio of Thomas Bourgeois, engineering student at ULB, focused on mechatronics.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⚙️%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f6f7f9;--sf:#fff;--ink:#14222f;--mu:#56636f;--ln:#cfd6dd;--ac:#0b5fa5;--on:#fff;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1620;--sf:#142130;--ink:#e6edf3;--mu:#9fb0bf;--ln:#2a3b4d;--ac:#6bb6ff;--on:#0e1620}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--sans)}
+a{color:var(--ac);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+h1{font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.02;font-weight:600;letter-spacing:-.025em}
+h2{font-size:1.9rem;font-weight:600;letter-spacing:-.015em;line-height:1.2;margin-bottom:1.5rem}
+h3{font-size:1.6rem;font-weight:600;line-height:1.25}
+h4{font-size:1rem;font-weight:600;margin:1.6rem 0 .25rem}h4:first-child{margin-top:0}
+section{padding:4.5rem 0;border-bottom:1px solid var(--ln)}
+.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--ln)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:3.5rem}
+.top nav{display:flex;gap:1.4rem;font-size:.95rem}
+.top a{color:var(--ink);text-decoration:none}.top a:hover{color:var(--ac)}.brand{font-weight:600}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:end;padding:5rem 0 4rem}
+.intro{max-width:34rem;margin:1.5rem 0 2rem;color:var(--mu);font-size:1.15rem}
+.btn{display:inline-block;padding:.65rem 1.2rem;border:1px solid var(--ink);border-radius:2px;color:var(--ink);text-decoration:none;font-weight:500;margin:0 .6rem .6rem 0}
+.btn.p{background:var(--ac);border-color:var(--ac);color:var(--on)}
+.btn:hover{text-decoration:underline}
+/* title block: bordered fact sheet, like on an engineering drawing */
+.tb{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.tb>div{background:var(--sf);padding:.65rem .9rem}.tb .w{grid-column:1/-1}
+.tb dt{font:400 .78rem var(--mono);color:var(--mu)}.tb dd{font-weight:500;font-size:.98rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0}
+.tags li{font:400 .78rem var(--mono);border:1px solid var(--ln);padding:.05rem .5rem;border-radius:2px;color:var(--mu)}
+.idx{border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:190px 1fr;gap:1.5rem;padding:1.2rem 0;border-bottom:1px solid var(--ln);text-decoration:none;color:var(--ink)}
+.row img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--ln);display:block}
+.row b{font-size:1.2rem;font-weight:600}.row:hover b{color:var(--ac);text-decoration:underline}
+.row p{color:var(--mu);margin:.2rem 0 .6rem}
+.project{padding:3.5rem 0;border-top:1px solid var(--ln)}
+.project>header{max-width:46rem;margin-bottom:1.8rem}
+.lead{font-size:1.15rem;color:var(--mu);margin:.4rem 0 1rem}
+.cols{display:grid;grid-template-columns:300px 1fr;gap:3rem;align-items:start}
+.cols .tb{grid-template-columns:1fr;position:sticky;top:5rem}
+.body{max-width:42rem}
+.media{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}.wide{grid-column:1/-1}
+figure img{width:100%;display:block;border:1px solid var(--ln);background:var(--sf)}
+figcaption{font-size:.88rem;color:var(--mu);margin-top:.4rem}
+.video{position:relative;aspect-ratio:16/9;border:1px solid var(--ln);background:#000}.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.skills>div{background:var(--sf);padding:1rem 1.1rem}.skills ul{list-style:none;padding:0;color:var(--mu);font-size:.95rem}
+footer{padding:2rem 0;color:var(--mu);font-size:.9rem}
+@media(max-width:760px){.hero,.cols{grid-template-columns:1fr}.cols .tb{position:static}.row,.media{grid-template-columns:1fr}.top nav .s{display:none}section{padding:3rem 0}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top">[Your Name]</a>
+  <nav><a href="#projects">Projects</a><a class="s" href="#skills">Skills</a><a class="s" href="#about">About</a><a href="assets/CV.pdf">CV (PDF)</a></nav>
+</div></header>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>[Your Name]</h1>
+      <p class="intro">Engineering student building systems where mechanics, electronics and control meet. I design, prototype and test them, from CAD to firmware. <!-- EDIT: 2 sentences max. --></p>
+      <a class="btn p" href="assets/CV.pdf">Download CV</a><a class="btn" href="#projects">See projects</a>
+    </div>
+    <dl class="tb">
+      <div class="w"><dt>Studying</dt><dd>Engineering, Université libre de Bruxelles (3rd year)</dd></div>
+      <div class="w"><dt>Focus</dt><dd>Mechatronics: mechanical design, electronics, control, software</dd></div>
+      <div><dt>Applying to</dt><dd>MSc, autumn 2027</dd></div>
+      <div><dt>Contact</dt><dd><a href="mailto:your.email@example.com">Email</a></dd></div>
+    </dl>
+  </div>
+</div>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <div class="idx" id="index"><!-- filled automatically from the projects below --></div>
+
+<!-- ============ PROJECT TEMPLATE: copy a whole <article> to add a project. Give each a unique id. ============ -->
+<article class="project" id="project-1">
+  <header>
+    <h3>Project title</h3>
+    <p class="lead">One sentence: what you built and what it does.</p>
+    <ul class="tags"><li>Mechanical design</li><li>Control</li><li>Embedded</li></ul>
+  </header>
+  <div class="cols">
+    <dl class="tb">
+      <div><dt>Context</dt><dd>Course / student team / personal, 2025</dd></div>
+      <div><dt>My role</dt><dd>What you did yourself (team of N)</dd></div>
+      <div><dt>Tools</dt><dd>SolidWorks, MATLAB/Simulink, C++</dd></div>
+      <div><dt>Links</dt><dd><a href="#">Report (PDF)</a><br><a href="#">Code</a></dd></div>
+    </dl>
+    <div>
+      <div class="body">
+        <h4>Challenge</h4><p>The problem and the main constraints (specs, budget, time).</p>
+        <h4>Approach</h4><p>Your design choices and why: concept, modelling, controller, tests.</p>
+        <h4>Results</h4><p>What worked, with numbers (accuracy, speed, mass, cost). Then what you would improve.</p>
+      </div>
+      <div class="media">
+        <figure class="wide"><img src="assets/placeholder.svg" alt="Describe the image" loading="lazy"><figcaption>Caption. For SolidWorks: export a PNG render of your model (PhotoView 360 or a screenshot).</figcaption></figure>
+        <figure><img src="assets/placeholder.svg" alt="Describe the image" loading="lazy"><figcaption>Caption</figcaption></figure>
+        <figure><img src="assets/placeholder.svg" alt="Describe the image" loading="lazy"><figcaption>Caption</figcaption></figure>
+        <!-- YouTube (unlisted): replace VIDEO_ID with the code after "v=" in the video link. Delete this block if no video. -->
+        <div class="video wide"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Project demo video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      </div>
+    </div>
+  </div>
+</article>
+<!-- ============ END PROJECT TEMPLATE ============ -->
+
+<article class="project" id="project-2">
+  <header>
+    <h3>Second project title</h3>
+    <p class="lead">One sentence: what you built and what it does.</p>
+    <ul class="tags"><li>Electronics</li><li>Prototyping</li></ul>
+  </header>
+  <div class="cols">
+    <dl class="tb">
+      <div><dt>Context</dt><dd>Course, 2026</dd></div>
+      <div><dt>My role</dt><dd>Solo project</dd></div>
+      <div><dt>Tools</dt><dd>Arduino, KiCad</dd></div>
+      <div><dt>Links</dt><dd><a href="#">Code</a></dd></div>
+    </dl>
+    <div>
+      <div class="body"><h4>Challenge</h4><p>…</p><h4>Approach</h4><p>…</p><h4>Results</h4><p>…</p></div>
+      <div class="media"><figure class="wide"><img src="assets/placeholder.svg" alt="Describe the image" loading="lazy"><figcaption>Caption</figcaption></figure></div>
+    </div>
+  </div>
+</article>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div><h4>Mechanical design</h4><ul><li>SolidWorks (parts, assemblies, drawings)</li><li>FEA basics</li><li>3D printing</li></ul></div>
+    <div><h4>Electronics</h4><ul><li>Circuit design and PCB</li><li>Sensors and actuators</li><li>Soldering, measurement</li></ul></div>
+    <div><h4>Control and software</h4><ul><li>MATLAB / Simulink</li><li>PID, state-space</li><li>C/C++, Python</li></ul></div>
+    <div><h4>Languages</h4><ul><li>French (native)</li><li>English (level)</li></ul></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <h2>About</h2>
+  <div class="cols">
+    <dl class="tb">
+      <div><dt>Education</dt><dd>ULB, Faculty of Engineering, 2023–present</dd></div>
+      <div><dt>Interests</dt><dd>Robotics, [your interests]</dd></div>
+    </dl>
+    <div class="body"><p>A short paragraph in English: what drew you to mechatronics, what you want to learn in the master’s, and what you bring (team projects, initiative). Keep it consistent with your motivation letter.</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <a class="btn p" href="mailto:your.email@example.com">your.email@example.com</a><a class="btn" href="https://www.linkedin.com/in/your-profile">LinkedIn</a><a class="btn" href="https://github.com/your-username">GitHub</a>
+</div></section>
+</main>
+<footer><div class="wrap">© <span id="yr"></span> [Your Name]</div></footer>
+
+<script>
+const idx=document.getElementById('index');
+document.querySelectorAll('.project').forEach(p=>{
+  const a=document.createElement('a');a.className='row';a.href='#'+p.id;
+  const im=document.createElement('img'),s=p.querySelector('img');
+  im.src=s?s.getAttribute('src'):'assets/placeholder.svg';im.alt='';im.loading='lazy';
+  const d=document.createElement('div'),t=document.createElement('b'),l=document.createElement('p');
+  t.textContent=p.querySelector('h3').textContent;l.textContent=p.querySelector('.lead').textContent;
+  d.append(t,l,p.querySelector('.tags').cloneNode(true));a.append(im,d);idx.append(a);
+});
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
